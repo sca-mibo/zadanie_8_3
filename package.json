@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:html",
+    "test": "npm run test:html && npm run test:jshint",
     "test:html": "glob-run nu-html-checker *.html",
+    "test:jshint": "$ jshint scripts.js",
     "build": "npm run build:sass  && npm run build:autoprefixer && npm run test",
     "build:sass": "sass --sourcemap=none --update sass:css",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
@@ -18,9 +19,12 @@
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.18.13",
+    "glob": "^7.1.2",
     "glob-run": "^0.1.6",
+    "jshint": "^2.9.5",
     "nu-html-checker": "^0.1.0",
     "onchange": "^3.2.1",
-    "parallelshell": "^3.0.2"
+    "parallelshell": "^3.0.2",
+    "run": "^1.4.0"
   }
 }
